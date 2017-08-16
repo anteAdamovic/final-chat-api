@@ -5,7 +5,7 @@
     $sqlError;
 
     if( !isset($request->conversationId) ) {
-        echo json_encode(array( 'success': false, 'error' => 'No conversation ID passed.' ));
+        echo json_encode(array( 'success' => false, 'error' => 'No conversation ID passed.' ));
         return;
 	}
 
@@ -24,5 +24,5 @@
         echo json_encode(array( 'success' => false, 'data' => 'No messages found.', 'error' => $sqlError ));
     }
 
-    echo json_encode(array( 'success' => true, 'data': $data ));
+    echo json_encode(array( 'success' => true, 'data' => $data ));
 ?>

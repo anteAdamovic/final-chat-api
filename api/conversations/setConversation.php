@@ -5,7 +5,7 @@
     $sqlError;
 
     if( !isset($request->users) ) {
-        echo json_encode(array( 'success': false, 'error' => 'No user IDs passed.' ));
+        echo json_encode(array( 'success' => false, 'error' => 'No user IDs passed.' ));
         return;
 	}
 
@@ -18,7 +18,7 @@
         }
     }
 
-    $conversationId
+    $conversationId;
 
     // Make sure conversationId doesn't exist already
     do {

@@ -12,7 +12,7 @@
     $user = $request->user;
 
     $sql = "INSERT INTO `users` (`userId`) VALUES ('$user')";
-    if(db->query($sql) !== TRUE) {
+    if($db->query($sql) !== TRUE) {
         $sqlError = $db->error;
         exit(json_encode(array( 'success' => false, 'error' => $sqlError )));
     }

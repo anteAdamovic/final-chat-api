@@ -5,7 +5,7 @@
     $sqlError;
 
     if( !isset($request->conversationId) && !isset($request->userId) && !isset($request->text) ) {
-        echo json_encode(array( 'success': false, 'error' => 'No conversation ID passed.' ));
+        echo json_encode(array( 'success' => false, 'error' => 'No conversation ID passed.' ));
         return;
 	}
 

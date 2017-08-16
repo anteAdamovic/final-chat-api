@@ -5,7 +5,7 @@
     $sqlError;
 
     if( !isset($request->user) ) {
-        echo json_encode(array( 'success': false, 'error' => 'No user ID passed.' ));
+        echo json_encode(array( 'success' => false, 'error' => 'No user ID passed.' ));
         return;
 	}
 
@@ -25,6 +25,6 @@
         echo json_encode(array( 'success' => false, 'data' => 'No conversations found.', 'error' => $sqlError ));
     }
 
-    echo json_encode(array( 'success' => true, 'data': $data ));
+    echo json_encode(array( 'success' => true, 'data' => $data ));
 
 ?>
