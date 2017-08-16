@@ -5,7 +5,7 @@
     $sqlError;
 
     if( !isset($request->users) ) {
-        echo json_encode({ success: false, error: "No user IDs passed." });
+        echo json_encode(array( 'success': false, 'error' => 'No user IDs passed.' ));
         return;
 	}
 
@@ -14,7 +14,7 @@
     // First check if all users exist
     foreach($users as &$user) {
         if (!userExists($user)) {
-            exit(json_encode({ success: false, data: "Can't find user '$user'", error: $sqlError }));
+            exit(json_encode(array( 'success' => false, 'data' => "Can't find user '$user'", 'error' => $sqlError )));
         }
     }
 
@@ -27,11 +27,11 @@
 
     foreach($users as &$user) {
         if (!addNewConversation($user, $conversationId)) {
-            exit(json_encode({ success: false, data: "Couldn't create conversation '$conversationId' for user '$user'", error: $sqlError }))
+            exit(json_encode(array( 'success' => false, 'data' => "Couldn't create conversation '$conversationId' for user '$user'", 'error' => $sqlError )));
         }
     }
 
-    echo json_encode({ success: true });
+    echo json_encode(array( 'success' => true ));
 
     // Functions
 
